@@ -83,37 +83,14 @@ MOV Instruction
 ```
 
 ---
+## Ladder Diagram
 
-## **Flowchart Representation (Graphviz DOT Code)**
+![image](https://github.com/user-attachments/assets/76ce0ea8-3edd-48b4-a246-d65931356da6)
 
-```dot
-digraph PID_TemperatureControl {
-    rankdir=TB;
-    node [shape=rectangle, style=filled, fillcolor=lightblue];
+## **Flowchart Representation**
 
-    Start [label="Start Execution", shape=oval, fillcolor=yellow];
-    ReadTemperature [label="Read Analog Input (I:3.0)"];
-    ScaleTemperature [label="Scale Input to 32-212°F (SCP)"];
-    CheckLow [label="Temperature < 32°F?"];
-    CheckHigh [label="Temperature > 212°F?"];
-    SetLow [label="Set Temp = 32°F"];
-    SetHigh [label="Set Temp = 212°F"];
-    ComputePID [label="Compute PID Control Output"];
-    ApplyOutput [label="Apply Output to Heating/Cooling (O:4.0)"];
-    End [label="End Execution", shape=oval, fillcolor=yellow];
+![image](https://github.com/user-attachments/assets/e98cc4d3-ca1e-42c5-b369-26fd1c4ecb73)
 
-    Start -> ReadTemperature -> ScaleTemperature;
-    ScaleTemperature -> CheckLow;
-    CheckLow -> SetLow [label="Yes"];
-    CheckLow -> CheckHigh [label="No"];
-    CheckHigh -> SetHigh [label="Yes"];
-    CheckHigh -> ComputePID [label="No"];
-    SetLow -> ComputePID;
-    SetHigh -> ComputePID;
-    ComputePID -> ApplyOutput;
-    ApplyOutput -> End;
-}
-```
 
 ---
 
