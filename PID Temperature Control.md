@@ -104,4 +104,3 @@ This ladder logic ensures a stable and **automated temperature regulation system
 
 ---
 
-You can now **upload this `.md` file to GitHub** as project documentation. Let me know if you need a **rendered flowchart image!** 🚀
